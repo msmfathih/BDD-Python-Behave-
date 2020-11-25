@@ -1,0 +1,2 @@
+behave features\demo_automation.feature
+behave features\demo_automationlogin.feature
