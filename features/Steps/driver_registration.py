@@ -50,21 +50,21 @@ def click_Driver_Page(context):
     time.sleep(2)
 
 
-@then('Enter Drivername "aadil"')
-def enter_Driver_Name(context):
-    context.driver.find_element_by_xpath("//input[@name='name']").send_keys("aadil")
+@then('Enter Drivername "{drivername}"')
+def enter_Driver_Name(context, drivername):
+    context.driver.find_element_by_xpath("//input[@name='name']").send_keys(drivername)
     time.sleep(2)
 
 
-@then('Enter PhoneNumber "97152854262"')
-def enter_mobile_number(context):
-    context.driver.find_element(By.NAME, 'mobile_number').send_keys("0528542754")
+@then('Enter PhoneNumber "{p_number}"')
+def enter_mobile_number(context, p_number):
+    context.driver.find_element(By.NAME, 'mobile_number').send_keys(p_number)
     time.sleep(2)
 
 
-@then('Enter Emailid "aadil@gmail.com"')
-def enter_emailid(context):
-    context.driver.find_element(By.XPATH, "//input[@name='email']").send_keys("aadil@gmail.com")
+@then('Enter Emailid "{email_address}"')
+def enter_emailid(context, email_address):
+    context.driver.find_element(By.XPATH, "//input[@name='email']").send_keys(email_address)
     time.sleep(2)
 
 
