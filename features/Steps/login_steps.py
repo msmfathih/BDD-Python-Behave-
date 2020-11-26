@@ -19,9 +19,10 @@ def verifyLogo(context):
     assert status is True
 
 
-@then('Enter emailid "admin@gmail.com"')
-def enterEmail(context):
-    context.driver.find_element(By.ID, 'email').send_keys('admin@gmail.com')
+# @then('Enter emailid "admin@gmail.com"')
+@then('Enter emailid "{email}"')
+def enterEmail(context, email):
+    context.driver.find_element(By.ID, 'email').send_keys(email)
 
 
 @then('Click on login button')
