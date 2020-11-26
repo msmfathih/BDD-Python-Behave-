@@ -19,10 +19,10 @@ def verifyLogo(context):
     status = context.driver.find_element(By.XPATH, "//a[contains(text(),'Rent Vehicles')]").is_displayed()
     assert status is True
 
-@then('Enter emailid "admin@gmail.com" and password "admin@123"')
-def enterCredentials(context):
-    context.driver.find_element(By.ID, "email").send_keys("admin@gmail.com")
-    context.driver.find_element(By.ID, "password").send_keys("admin@123")
+@then('Enter emailid "{email}" and password "{pwd}"')
+def enterCredentials(context,email, pwd):
+    context.driver.find_element(By.ID, "email").send_keys(email)
+    context.driver.find_element(By.ID, "password").send_keys(pwd)
 
 
 @then('Click on login button')
@@ -38,6 +38,6 @@ def verifyDashboard(context):
 
 @then('close browser')
 def closeApp(context):
-    context.driver.find_element(By.XPATH, "/html/body/div[2]/aside[1]/div/div[4]/div/div/nav/ul/li[4]/a/p").click(),time.sleep(3)
-    context.driver.find_element(By.XPATH, "//p[contains(text(),'Logout')]").click()
-    #context.driver.close()
+    # context.driver.find_element(By.XPATH, "/html/body/div[2]/aside[1]/div/div[4]/div/div/nav/ul/li[4]/a/p").click(),time.sleep(3)
+    # context.driver.find_element(By.XPATH, "//p[contains(text(),'Logout')]").click()
+    context.driver.close()
