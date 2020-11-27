@@ -56,7 +56,7 @@ def click_driver_list(context):
 @then('Click on Action view')
 def click_action_view(context):
     click_action_view = context.driver.find_element_by_xpath("//tr[4]//td[6]//a[1]")
-    click_action_view.click()
+    click_action_view.click(),time.sleep(2)
 
 
 @then('Verify driver details pagge title')
@@ -68,7 +68,7 @@ def verify_page_title(context):
 @then('Verify driver name')
 def verify_driver_name(context):
     status = context.driver.find_element(By.XPATH, "//label[contains(text(),'Driver Name : ashika')]").is_displayed()
-    assert status is True
+    assert status is True,time.sleep(2)
 
 
 @then('Verify driver email')
@@ -89,13 +89,14 @@ def verify_nic(context):
         print("Driver nic number verified")
     else:
         print("Driver nic number is not verified")
+        time.sleep(2)
 
 
 @then('Click on Go back button')
 def click_back_button(context):
-    context.driver.find_element(By.ID, "cancelButton").click()
+    context.driver.find_element(By.ID, "cancelButton").click(),time.sleep(2)
 
 
 @then('close browser')
 def closeApp(context):
-    context.driver.close()
+    context.driver.close(),time.sleep(2)
